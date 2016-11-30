@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .container
+        h1 ToDos
+        .row
+            .col-md-12
+                .panel.panel-default
+                    .panel-heading Your New Todo
+                    .panel-body
+                        .row
+                            form.add-todo-form(role="form", action="/todos", method="post")
+                                .col-md-4
+                                    .form-group
+                                        label(for="title") ToDo Name
+                                        input.form-control(name="title", id="title", placeholder="ToDo Name")
+                                .col-md-8
+                                    .form-group
+                                        label(for="description") ToDo Description
+                                        textarea.form-control(name="description", id="description", placeholder="ToDo Description")
+                                        button.btn.btn-primary.pull-right(type="submit") Add ToDo!
